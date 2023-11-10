@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Lista tareas</h1>
+
+
+    <div class="container mt-3">
+        <h3>Agregar Nueva Tarea</h3>
+        <form onsubmit="agregarTarea(); return false;">
+            <div class="mb-3">
+                <label for="tarea" class="form-label">Tarea</label>
+                <input type="text" class="form-control" id="tarea" required>
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha de finalización</label>
+                <input type="date" class="form-control" id="fecha" required>
+            </div>
+         
+            <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+        </form>
+    </div>
+
+
+
+
+
+    <form id="filter-form" class="container mt-3">
+        <h3>Filtrar</h3>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <button type="button" onclick="filtrarCumplidas()" id="1" class="btn btn-primary btn-block">Actividades cumplidas</button>
+            </div>
+            <div class="col-md-6 mb-2">
+                <button type="button" onclick="filtrarNoCumplidasVigentes()" id="2" class="btn btn-primary btn-block">Actividades no cumplidas vigentes</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <button type="button" onclick="filtrarCumplidasNoVigentes()" id="3" class="btn btn-primary btn-block">Actividades cumplidas no vigentes</button>
+            </div>
+            <div class="col-md-6 mb-2">
+                <button type="button" onclick="mostrarTodas()" id="4" class="btn btn-primary btn-block">Todas las actividades</button>
+            </div>
+        </div>
+    </form>
+    
+
+
+    <table id="table" >
+        <thead >
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tarea</th>
+                <th scope="col">Cumplida</th>
+                <th scope="col">Termina</th>
+                <th scope="col">Vigencia</th>
+                <th scope="col">Vencidas</th>
+                <th scope="col">Completar</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
