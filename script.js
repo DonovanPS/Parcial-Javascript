@@ -95,7 +95,9 @@ function tareaPasadaDeFecha(taskKey) {
   const fechaActual = new Date();
   const fechaFinalizacion = new Date(tarea.end);
 
+ 
   return fechaFinalizacion < fechaActual;
+  
 }
 
 
@@ -125,7 +127,7 @@ function agregarTarea() {
 
   const nextIndex = Object.keys(data.tasks).length;
 
-  
+
   if (nextIndex < actividades.length) {
     const id = actividades[nextIndex];
 
